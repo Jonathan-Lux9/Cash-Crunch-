@@ -157,12 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Toggelt die Hamburger-Striche zum "X"
             burgerBtn.classList.toggle("is-active");
             
-            // Verhindert das Scrollen der Website im Hintergrund bei offenem Menü
-            if (mobileOverlay.classList.contains("is-active")) {
-                document.body.style.overflow = "hidden";
-            } else {
-                document.body.style.overflow = "";
-            }
+            // Toggelt die no-scroll Klasse auf dem body (verhindert Scrollen im Hintergrund)
+            document.body.classList.toggle("no-scroll");
         });
 
         // Schließt das Menü automatisch, wenn ein Navigationslink im Menü geklickt wird
@@ -171,7 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
             link.addEventListener("click", () => {
                 mobileOverlay.classList.remove("is-active");
                 burgerBtn.classList.remove("is-active");
-                document.body.style.overflow = "";
+                // Entfernt die Scroll-Sperre wieder beim Verlassen des Menüs
+                document.body.classList.remove("no-scroll");
             });
         });
     }

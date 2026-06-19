@@ -980,6 +980,10 @@ a.product-link:hover .product-grid-img {
     width: 100%;
 }
 
+body.no-scroll {
+    overflow: hidden !important;
+}
+
 /* ==========================================================================
    10. COMPLETE RESPONSIVE FIX (Header, Charts, Kaufbereich & Footer)
    ========================================================================== */
@@ -1249,7 +1253,7 @@ a.product-link:hover .product-grid-img {
     .detail-image-box {
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important; /* Killt die 450px aus dem Desktop-CSS */
+        height: auto !important; 
         min-height: unset !important;
         flex: none !important;
         box-sizing: border-box !important;
@@ -1332,14 +1336,14 @@ a.product-link:hover .product-grid-img {
     /* FIX: Zwingt das mittlere Werbebanner in die Knie ohne Verzerrung */
     img.product-middle-image {
         display: block !important;
-        width: calc(100% + 30px) !important; /* Holt sich die 15px Padding links und rechts zurück */
+        width: calc(100% + 30px) !important; 
         max-width: calc(100% + 30px) !important;
-        height: auto !important; /* Verhindert das Quetschen der Höhe */
+        height: auto !important; 
         min-height: unset !important;
         max-height: unset !important;
-        margin-left: -15px !important; /* Schiebt das Bild exakt an den linken Displayrand */
-        margin-right: -15px !important; /* Schiebt das Bild exakt an den rechten Displayrand */
-        object-fit: contain !important; /* Behält das Seitenverhältnis unter allen Umständen bei */
+        margin-left: -15px !important; 
+        margin-right: -15px !important; 
+        object-fit: contain !important; 
         border-radius: 0px !important; 
         box-shadow: none !important;
         border: none !important;
@@ -1379,6 +1383,7 @@ a.product-link:hover .product-grid-img {
         padding: 30px 20px;
         box-sizing: border-box;
         display: block !important; 
+        overflow-y: auto !important;
     }
 
     .mobile-menu-overlay.is-active {
@@ -1395,12 +1400,30 @@ a.product-link:hover .product-grid-img {
     .mobile-nav-links a {
         color: #ffffff;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 24px; /* Größer für die Hauptoptik laut Screenshot */
         font-weight: 500;
         width: 100%;
         text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Styling für die Pill-Buttons (Privatkunden etc.) im mobilen Menü */
+    .mobile-nav-links .active-pill {
+        background-color: #ffffff !important;
+        color: #ff0000 !important;
+        border-radius: 50px;
+        width: auto !important;
+        padding: 8px 25px !important;
+        border-bottom: none !important;
+    }
+
+    /* Feine Extra-Trennlinie zwischen den Zielgruppen-Links und den Produkt-Links */
+    .mobile-menu-divider {
+        border: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+        margin: 10px 0 !important;
+        width: 80% !important;
     }
 
     .banking-btn-mobile {
@@ -1409,7 +1432,7 @@ a.product-link:hover .product-grid-img {
         border: none;
         padding: 15px 35px;
         border-radius: 50px;
-        font-size: 16px;
+        font-size: 20px; /* Bündig mit den Texten */
         font-weight: 600;
         cursor: pointer;
         width: 100%;
@@ -1465,7 +1488,7 @@ a.product-link:hover .product-grid-img {
 
     /* Mobil-Fix für das Produkt-Grid */
     .product-image-placeholder {
-        min-height: unset !important;  /* Mobil brauchen wir keine riesige Mindesthöhe */
+        min-height: unset !important;  
         height: auto !important;
         background-color: transparent !important;
         border: none !important;
@@ -1475,6 +1498,6 @@ a.product-link:hover .product-grid-img {
     .product-grid-img {
         width: 100% !important;
         height: auto !important;
-        max-height: 260px !important;  /* Perfekte, harmonische Größe für mobile Displays */
+        max-height: 260px !important;  
     }
 }
